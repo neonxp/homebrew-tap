@@ -9,17 +9,17 @@ class Track < Formula
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "http://github.com/neonxp/track/releases/v0.0.1/track_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "8cc569510f3207cebc12ac2b5e301fc806cc764b7d967f10875d2bde85193911"
+    if Hardware::CPU.intel?
+      url "http://github.com/neonxp/track/releases/download/v0.0.1/track_0.0.1_Darwin_x86_64.tar.gz"
+      sha256 "55d991e4854ef52e9ae46bba4ffa21456766dd2484131dd9ddb51ed278c5da5b"
 
       def install
         bin.install "track"
       end
     end
-    if Hardware::CPU.intel?
-      url "http://github.com/neonxp/track/releases/v0.0.1/track_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "f04a63bd99b5e30ab4fb63556b72c9fa292264d22732f90d572d9fd80d61fcac"
+    if Hardware::CPU.arm?
+      url "http://github.com/neonxp/track/releases/download/v0.0.1/track_0.0.1_Darwin_arm64.tar.gz"
+      sha256 "0adb292d018a70d5719319864cdefde00ed0f196b2a8352b69e6c5991c247197"
 
       def install
         bin.install "track"
@@ -28,17 +28,17 @@ class Track < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://github.com/neonxp/track/releases/v0.0.1/track_0.0.1_Linux_arm64.tar.gz"
-      sha256 "20d878d27ea89c6c9fea88a9c0dc94b935eafc0ac929038830a6cd31a2ac9f7d"
+    if Hardware::CPU.intel?
+      url "http://github.com/neonxp/track/releases/download/v0.0.1/track_0.0.1_Linux_x86_64.tar.gz"
+      sha256 "9da5559c2366c69900260272665c8bab91244dc3a5eadc15b8d4a1e5584fbe50"
 
       def install
         bin.install "track"
       end
     end
-    if Hardware::CPU.intel?
-      url "http://github.com/neonxp/track/releases/v0.0.1/track_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "1150d8f84ce88600781b7895636b0c53b09d43dbad524e1f192013345069a34d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "http://github.com/neonxp/track/releases/download/v0.0.1/track_0.0.1_Linux_arm64.tar.gz"
+      sha256 "be8e2862b9e1cfd1bd6082a3ea870c8cbdade362c454aee1fe937c64fd0157e6"
 
       def install
         bin.install "track"
