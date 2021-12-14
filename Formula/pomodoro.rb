@@ -5,21 +5,21 @@
 class Pomodoro < Formula
   desc "Pomodoro timer for nerds"
   homepage "https://neonxp.ru/pomodoro/"
-  version "0.0.1"
+  version "0.0.2"
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.1/pomodoro_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "3e8b627ef05d2157364354817fb0f6a1ec08d9d0eaa17bab89e2ddd018120b90"
+    if Hardware::CPU.intel?
+      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.2/pomodoro_0.0.2_Darwin_x86_64.tar.gz"
+      sha256 "f68083da66327f0bea84d8f471a8e97bffb6f5cac9dd18e081af3ae3b05eebc5"
 
       def install
         bin.install "pomodoro"
       end
     end
-    if Hardware::CPU.intel?
-      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.1/pomodoro_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "38cb3d5edfa22ad7bec7a3316a07c0e3e3ec67efb896b2fa4ecdb3c8f773c705"
+    if Hardware::CPU.arm?
+      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.2/pomodoro_0.0.2_Darwin_arm64.tar.gz"
+      sha256 "ec9c562ef26d84932b53a860edfd4342a324484567c5bde11f6805de1ae841ec"
 
       def install
         bin.install "pomodoro"
@@ -29,16 +29,16 @@ class Pomodoro < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.1/pomodoro_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "52aa9d4c4d78113063b113529d5254b8f6933d5c4effee799b40d59deff71637"
+      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.2/pomodoro_0.0.2_Linux_x86_64.tar.gz"
+      sha256 "4022ef3a55dbae41500f4fa22a1c672b9690131d0ba19e39f6e199912071675d"
 
       def install
         bin.install "pomodoro"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.1/pomodoro_0.0.1_Linux_arm64.tar.gz"
-      sha256 "3832dffaadf315ba24088b0f86c175127ea43d7c3952742e285a5e46a88bdfb8"
+      url "http://github.com/neonxp/pomodoro/releases/download/v0.0.2/pomodoro_0.0.2_Linux_arm64.tar.gz"
+      sha256 "246721c5d3abe362565339943c73336e379fdf23c345a05d466cc63a97cf5f17"
 
       def install
         bin.install "pomodoro"
